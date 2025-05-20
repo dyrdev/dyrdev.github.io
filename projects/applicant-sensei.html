@@ -1,1 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Applicant Sensei | AI Career Assistant | Case Study</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1e5daa17-7d29-8037-9333-f6b560cc7253" class="page sans"><header><h1 class="page-title"><strong>Applicant Sensei | AI Career Assistant | Case Study</strong></h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-red callout" style="white-space:pre-wrap;display:flex" id="1e6daa17-7d29-80e4-a0e3-d9ccab46b665"><div style="width:100%"><p id="1e6daa17-7d29-808b-a69c-c5192c34c7ea" class=""><a href="https://applicant-sensei.vercel.app/">Live Demo</a><mark class="highlight-default">  |  </mark><a href="https://github.com/cdyadi/Applicant-Sensei">View Code</a>  <mark class="highlight-default">|  </mark><a href="https://www.notion.so/Coding-Principles-and-Programming-Methodologies-Applied-1eddaa177d2980c78d91f20c7dc7bde9?pvs=21">Principles</a></p></div></figure><p id="1e6daa17-7d29-805b-8915-d11e9f2a47a3" class="">Job seekers today face a brutal paradox: their resumes must please both algorithms and humans, while interviews demand confidence under pressure. Even qualified candidates are caught in this double bind—forced to strategize for machines in writing, then perform for people in person. The system shouldn’t work this way, but it does: <a href="https://www.notion.so/Hidden-Workers-Untapped-Talent-1eddaa177d2980a7bc4efbc67030bd78?pvs=21">talent gets filtered out</a> by automated screenings, while live interviews reward polish over potential.</p><p id="1e6daa17-7d29-80f5-b141-eb783ede22b4" class=""><em><strong>Applicant Sensei</strong></em> aims to tackle this barrier head-on. With AI-powered resume tuning and stress-tested interview drills, it doesn’t just prepare candidates—it hacks a broken process, ensuring skills speak louder than formatting or nerves.</p><hr id="1e6daa17-7d29-80a0-9e21-ee1578325178"/><h2 id="1e6daa17-7d29-80f5-8bcc-d1a5c593e0cb" class="">Key Features</h2><figure id="1e5daa17-7d29-8028-bc23-fd8de77d4176" class="image"><a href="Applicant%20Sensei%20AI%20Career%20Assistant%20Case%20Study%201e5daa177d2980379333f6b560cc7253/dashboard.jpg"><img style="width:1080px" src="Applicant%20Sensei%20AI%20Career%20Assistant%20Case%20Study%201e5daa177d2980379333f6b560cc7253/dashboard.jpg"/></a></figure><h3 id="1e5daa17-7d29-8057-b569-ff7208671681" class="">Smart Resume Analysis</h3><ul id="1e5daa17-7d29-805e-8a83-fc2081d56821" class="bulleted-list"><li style="list-style-type:disc">Identifies missing keywords from job descriptions</li></ul><ul id="1e5daa17-7d29-8098-abf3-d924128af038" class="bulleted-list"><li style="list-style-type:disc">Scores resume readability using ATS (Applicant Tracking System) benchmarks</li></ul><ul id="1e5daa17-7d29-80c5-ab2f-eb3c232f5730" class="bulleted-list"><li style="list-style-type:disc">Suggests skill-based improvements (e.g., <em>“Add ‘project management’ to highlight team leadership”</em>)</li></ul><h3 id="1e5daa17-7d29-8085-a73b-e8eac8be7678" class="">Adaptive Interview Simulator</h3><ul id="1e5daa17-7d29-8029-9006-fa0d1e5ad8be" class="bulleted-list"><li style="list-style-type:disc">Adjusts question difficulty based on user performance</li></ul><ul id="1e5daa17-7d29-8032-a438-f00a522a2580" class="bulleted-list"><li style="list-style-type:disc">Provides real-time feedback on:<ul id="1e5daa17-7d29-8004-8589-c0fdcdcfa038" class="bulleted-list"><li style="list-style-type:circle">Speech clarity (pace, filler words)</li></ul><ul id="1e5daa17-7d29-80cf-9b30-e04a24dd062b" class="bulleted-list"><li style="list-style-type:circle">Answer structure (using STAR method framework)</li></ul></li></ul><hr id="1e5daa17-7d29-80ed-b2fe-ef2bac6f2be6"/><h2 id="1e5daa17-7d29-8052-8ee2-ce37d56f38c4" class="">Target Users</h2><ul id="1e5daa17-7d29-8063-875d-e69162dcd7ed" class="bulleted-list"><li style="list-style-type:disc">Recent graduates navigating competitive entry-level markets</li></ul><ul id="1e5daa17-7d29-8011-99d4-ce42287be8ad" class="bulleted-list"><li style="list-style-type:disc">Career-changers requiring strategic rebranding</li></ul><ul id="1e5daa17-7d29-8049-a34c-cde08ae6ea86" class="bulleted-list"><li style="list-style-type:disc">Neurodiverse candidates benefiting from simulated social scenarios</li></ul><ul id="1e5daa17-7d29-801a-ac1d-dadc26ad4e15" class="bulleted-list"><li style="list-style-type:disc">HR teams seeking standardized evaluation frameworks</li></ul><hr id="1e5daa17-7d29-8041-8bd0-c52bfa627e89"/><h2 id="1e5daa17-7d29-80a6-8dca-cdb953afef2f" class="">Semantic Identity</h2><p id="1e5daa17-7d29-80f9-98d7-c7e700bde9b6" class="">The brand name combines two meaningful elements:<div class="indented"><blockquote id="1e5daa17-7d29-8014-bb99-c1ebbb4aa52c" class="">“<em>Applicant</em>” refers to a career aspirant.</blockquote><blockquote id="1e5daa17-7d29-80bb-b682-da3b8a177d2f" class="">“<em>Sensei</em>” (先生) represents a knowledgeable mentor.</blockquote></div></p><p id="1e5daa17-7d29-8091-8bae-c684818c7a66" class="">This naming reflects the tool’s purpose of combining technical preparation with emotional readiness for job seekers.</p><hr id="1e5daa17-7d29-8094-8a80-ffda4791f433"/><h2 id="1e5daa17-7d29-8070-8488-ce0a4b97a231" class="">Design Psychology &amp; UI/UX Specifications</h2><h3 id="1e5daa17-7d29-8064-9125-c57c78467be2" class="">Color Semiotics</h3><figure id="1e5daa17-7d29-80f4-ad92-f22ff007e2ac" class="image"><a href="Applicant%20Sensei%20AI%20Career%20Assistant%20Case%20Study%201e5daa177d2980379333f6b560cc7253/Applicant-Sensei-primary-colors.jpeg"><img style="width:1600px" src="Applicant%20Sensei%20AI%20Career%20Assistant%20Case%20Study%201e5daa177d2980379333f6b560cc7253/Applicant-Sensei-primary-colors.jpeg"/></a></figure><p id="1e5daa17-7d29-806c-a1d9-e57eafc2ef48" class="">These colors simulate elevated heart rate responses, mirroring physiological reactions during high-pressure interviews.</p><p id="1e6daa17-7d29-8056-bd41-f9421b6bce37" class=""><em>Rationale: </em>Research shows that exposure to <a href="https://www.notion.so/Color-and-psychological-functioning-1e5daa177d2980e799c9dddd65213a79?pvs=21">red hues increases cognitive alertness</a> and induces controlled stress responses, effectively preparing users for real interview conditions through gradual acclimatization.</p><h3 id="1e5daa17-7d29-801f-a5a7-e471e1473cc1" class="">Typography</h3><figure id="1e6daa17-7d29-80f1-afab-ebeaca2ba71e" class="image"><a href="Applicant%20Sensei%20AI%20Career%20Assistant%20Case%20Study%201e5daa177d2980379333f6b560cc7253/Screenshot_20250501_134500.jpg"><img style="width:1033px" src="Applicant%20Sensei%20AI%20Career%20Assistant%20Case%20Study%201e5daa177d2980379333f6b560cc7253/Screenshot_20250501_134500.jpg"/></a></figure><ul id="1e6daa17-7d29-80d6-82e3-d2b89dca55e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Headings</strong>: IBM Plex Sans <p id="1e6daa17-7d29-801c-89a6-f1959cdd1f96" class=""><em>Projects technical precision and corporate credibility</em></p></li></ul><ul id="1e6daa17-7d29-80da-b61a-f6ba0f48d0e8" class="bulleted-list"><li style="list-style-type:disc"><strong>Body Text</strong>: Inter<p id="1e6daa17-7d29-808b-a939-cc2db6544fb2" class=""><em>Optimized for accessibility with </em><em><a href="https://www.notion.so/Good-fonts-for-dyslexia-1eddaa177d29802d902ac8ee6aed1b94?pvs=21">dyslexia-friendly letterforms</a></em></p></li></ul><hr id="1e5daa17-7d29-8050-8ee2-d88690e95a2d"/><h2 id="1e5daa17-7d29-8007-ac97-c0942be734a3" class="">Tech Stacks</h2><h3 id="1e5daa17-7d29-8078-8bf8-e7224f46b917" class="">Frontend</h3><p id="1e5daa17-7d29-808e-a5a0-c477e88c5dcd" class=""><strong>Core Technologies:</strong></p><ul id="1e5daa17-7d29-8096-94bc-c9836ea82900" class="bulleted-list"><li style="list-style-type:disc">React.js with Next.js framework</li></ul><ul id="1e5daa17-7d29-80a6-b355-f92b7f6bb827" class="bulleted-list"><li style="list-style-type:disc">Dynamic SVG animations, React Spring for context-aware transitions</li></ul><ul id="1e5daa17-7d29-802b-8b59-e51270934df4" class="bulleted-list"><li style="list-style-type:disc">Mobile-first responsive design (Flexbox/Grid)</li></ul><p id="1e5daa17-7d29-8093-9c60-d640794357d8" class=""><strong>State &amp; Performance</strong>:</p><ul id="1e5daa17-7d29-802e-912a-f48bd43da0e4" class="bulleted-list"><li style="list-style-type:disc">React Suspense API for segmented resource loading</li></ul><ul id="1e5daa17-7d29-80d3-93eb-e9e0d2b6588c" class="bulleted-list"><li style="list-style-type:disc">WebSocket-driven real-time feedback UI</li></ul><p id="1e5daa17-7d29-80ed-b295-e5723d3d87dc" class=""><strong>Accessibility &amp; Compliance</strong>:</p><ul id="1e5daa17-7d29-803a-a32f-c319d560aa1b" class="bulleted-list"><li style="list-style-type:disc">WCAG 2.1 AA standards (contrast ratios, ARIA labels)</li></ul><ul id="1e5daa17-7d29-8022-8f0b-ca92c52cf7ef" class="bulleted-list"><li style="list-style-type:disc">Dyslexia-friendly typography (Inter Regular font)</li></ul><p id="1e5daa17-7d29-803f-b2d9-e1a520354be1" class=""><strong>Progressive Web App (PWA)</strong>:</p><ul id="1e5daa17-7d29-8005-883a-ccc53724e5e1" class="bulleted-list"><li style="list-style-type:disc">Service workers for offline functionality</li></ul><ul id="1e5daa17-7d29-8067-8dac-e654e8de85ed" class="bulleted-list"><li style="list-style-type:disc">Installable app manifest</li></ul><h3 id="1e5daa17-7d29-8011-9103-fa9b752a38cc" class=""><strong>Backend</strong></h3><p id="1e5daa17-7d29-80ad-8cfe-ff54f5060a6e" class=""><strong>API Architecture</strong>:</p><ul id="1e5daa17-7d29-802d-9d8f-e4f592af83d3" class="bulleted-list"><li style="list-style-type:disc">Node.js API Gateway (Express.js)</li></ul><ul id="1e5daa17-7d29-8063-9393-fb858ace5975" class="bulleted-list"><li style="list-style-type:disc">RESTful endpoints for resume/ATS interactions</li></ul><p id="1e5daa17-7d29-8054-a861-e863395ce808" class=""><strong>Machine Learning Services</strong>:</p><ul id="1e5daa17-7d29-8087-b5e9-c3413143da01" class="bulleted-list"><li style="list-style-type:disc">Python NLP pipeline for resume parsing</li></ul><ul id="1e5daa17-7d29-8005-9f6b-ccd28f3a85a1" class="bulleted-list"><li style="list-style-type:disc">TensorFlow.js LSTM models (for frontend simulations)</li></ul><p id="1e5daa17-7d29-8065-af3d-c2c0234b3f1c" class=""><strong>Authentication &amp; Security</strong>:</p><ul id="1e5daa17-7d29-802c-b1c9-d01a00a91380" class="bulleted-list"><li style="list-style-type:disc">JWT token validation with Node.js</li></ul><ul id="1e5daa17-7d29-8049-a53b-fc14fd67d18a" class="bulleted-list"><li style="list-style-type:disc">Canvas-based CAPTCHA system</li></ul><ul id="1e5daa17-7d29-80cb-a957-e10cc8c31f6e" class="bulleted-list"><li style="list-style-type:disc">Cookie session management (SameSite/HttpOnly flags)</li></ul><p id="1e5daa17-7d29-8002-a1ef-d2b041dee313" class=""><strong>Data Integration</strong>:</p><ul id="1e5daa17-7d29-80a4-a383-f9221f84b5ed" class="bulleted-list"><li style="list-style-type:disc">ATS compatibility heatmaps (WebGL rendering)</li></ul><ul id="1e5daa17-7d29-801a-858e-dbbee970a174" class="bulleted-list"><li style="list-style-type:disc">Behavioral prediction algorithms (Python scikit-learn)</li></ul><p id="1e5daa17-7d29-803b-adfd-e5684be37579" class=""><strong>DevOps Foundations</strong>:</p><ul id="1e5daa17-7d29-8002-b646-ca0166698c6f" class="bulleted-list"><li style="list-style-type:disc">Containerized microservices (Docker mockups)</li></ul><ul id="1e5daa17-7d29-8084-ba0f-c63f721a4ae4" class="bulleted-list"><li style="list-style-type:disc">CI/CD pipeline design (GitHub Actions)</li></ul><hr id="1e5daa17-7d29-80a6-8b87-c3a47cb5845e"/><p id="1e5daa17-7d29-8030-bf6d-d3cf9087689d" class=""><em>Note: </em>The current AI outputs are rule-based simulations. Final version will leverage LLMs trained on 10,000+ successful resumes and interview transcripts. Demo aims to showcase UX flow and foundational logic.</p><hr id="1e5daa17-7d29-8011-b15b-f6028be84ea7"/><h2 id="1e5daa17-7d29-80c4-8ac1-d00d1b55abe4" class=""><strong>Planned Integrations &amp; Features</strong></h2><h3 id="1e6daa17-7d29-80fa-bd40-d5315dafb4dc" class=""><strong>Enterprise-Grade Capabilities</strong></h3><ul id="1e6daa17-7d29-8074-83c4-d1ebb49c5a97" class="bulleted-list"><li style="list-style-type:disc"><strong>Conversational AI</strong> – Powered by AWS Lex for natural interview interactions</li></ul><ul id="1e6daa17-7d29-80a6-813a-ff1ba35f3fdd" class="bulleted-list"><li style="list-style-type:disc"><strong>Hybrid Interview Support</strong> – Seamless Zoom SDK integration for virtual/live modes</li></ul><ul id="1e6daa17-7d29-8035-874a-ce8c33f83480" class="bulleted-list"><li style="list-style-type:disc"><strong>Immersive Simulations</strong> – Three.js-powered VR interview environments</li></ul><h3 id="1e6daa17-7d29-8088-a4bc-d7f43a4b6ac7" class=""><strong>Trust &amp; Validation Features</strong></h3><ul id="1e6daa17-7d29-800c-8de6-c0aecb3274c2" class="bulleted-list"><li style="list-style-type:disc"><strong>Automated Profile Verification</strong> – Direct API integrations with JobScan, LinkedIn, Workday, and Greenhouse</li></ul><ul id="1e6daa17-7d29-80f8-bb14-e10491a0973b" class="bulleted-list"><li style="list-style-type:disc"><strong>Market-Aligned Compensation</strong> – Real-time salary benchmarking via Glassdoor data</li></ul><ul id="1e6daa17-7d29-809a-bd28-e17358b2e6b2" class="bulleted-list"><li style="list-style-type:disc"><strong>Science-Backed Training</strong> – Behavioral psychology frameworks for evidence-based coaching</li></ul><ul id="1e6daa17-7d29-8027-965a-f1dec102e5bf" class="bulleted-list"><li style="list-style-type:disc"><strong>Robust Security Protocols</strong><ul id="1e6daa17-7d29-80d5-b335-e7357ca4ca96" class="bulleted-list"><li style="list-style-type:circle"><strong>Identity Management</strong> – OAuth 2.0 authentication (Okta)</li></ul><ul id="1e6daa17-7d29-8024-983b-cbf15b1ededb" class="bulleted-list"><li style="list-style-type:circle"><strong>Fraud Prevention</strong> – reCAPTCHA Enterprise for bot protection</li></ul></li></ul><h3 id="1e6daa17-7d29-802c-8da6-c57be25fae95" class=""><strong>Inclusive User Experience</strong></h3><ul id="1e6daa17-7d29-80d1-b860-d1dcfa2b36d9" class="bulleted-list"><li style="list-style-type:disc"><strong>Haptic Timers</strong> – Tactile feedback during timed responses (15–30 sec prep windows)</li></ul><ul id="1e6daa17-7d29-8064-8139-e4bcedaf560f" class="bulleted-list"><li style="list-style-type:disc"><strong>Realistic Pressure Training</strong><ul id="1e6daa17-7d29-8078-93a0-e7346fbfedbf" class="bulleted-list"><li style="list-style-type:circle"><strong>Simulated Interruptions</strong> – Practice maintaining composure</li></ul><ul id="1e6daa17-7d29-80c3-a49d-c47ab7f19d34" class="bulleted-list"><li style="list-style-type:circle"><strong>Customizable Background Noise</strong> – Office chatter/quiet room settings for focus adaptation</li></ul><ul id="1e6daa17-7d29-80d4-8bbe-f83aa99c1219" class="bulleted-list"><li style="list-style-type:circle"><strong>Ambient Noise Slider</strong> – Fine-tuned auditory environments</li></ul></li></ul><ul id="1e6daa17-7d29-80ff-9e9b-c0283eb18610" class="bulleted-list"><li style="list-style-type:disc"><strong>Adaptive Difficulty</strong><ul id="1e6daa17-7d29-800d-993c-e5534a2eceb8" class="bulleted-list"><li style="list-style-type:circle">Progressive challenge levels with optional <strong><a href="https://www.notion.so/How-people-read-online-1eddaa177d298072b5c7c3eb708c3e66?pvs=21">webcam-based tension analytics</a></strong></li></ul></li></ul><hr id="1eddaa17-7d29-80bb-ae61-d4b3e1a69b1e"/><figure id="1eddaa17-7d29-80c7-8d91-f20c7dc7bde9" class="link-to-page"><a href="https://www.notion.so/Coding-Principles-and-Programming-Methodologies-Applied-1eddaa177d2980c78d91f20c7dc7bde9?pvs=21">Coding Principles and Programming Methodologies Applied</a></figure><figure id="1e5daa17-7d29-8085-8fae-d38d46032db3" class="link-to-page"><a href="https://www.notion.so/References-1e5daa177d2980858faed38d46032db3?pvs=21">References</a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
